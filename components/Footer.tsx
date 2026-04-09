@@ -7,8 +7,8 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2">
-            <Image src="/logo_icon.png" alt="FinalRep" width={24} height={24} className="rounded-md opacity-80" unoptimized />
-            <span className="font-bold text-sm text-text-secondary">Final<span className="text-accent">Rep</span></span>
+            <Image src="/icon.png" alt="FinalRep" width={28} height={28} className="rounded-xl" unoptimized />
+            <span className="font-black text-sm tracking-tight">Final<span className="text-accent">Rep</span></span>
           </div>
           <nav className="flex items-center gap-6 text-sm text-text-muted">
             <a href="/privacy" className="hover:text-white transition-colors duration-200">Privacy Policy</a>
