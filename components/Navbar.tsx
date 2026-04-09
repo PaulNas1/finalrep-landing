@@ -7,7 +7,7 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50" style={{ backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', background: 'rgba(11, 12, 16, 0.85)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
       <div className="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
         <a href="#" className="flex items-center gap-3">
-          <Image src="/logo_icon.png" alt="FinalRep" width={48} height={48} className="rounded-xl" unoptimized />
+          <Image src="/logo_wordmark.png" alt="FinalRep" width={44} height={44} className="rounded-xl" unoptimized />
           <span className="font-black text-2xl tracking-tight">Final<span className="text-accent">Rep</span></span>
         </a>
         <nav className="hidden md:flex items-center gap-10">
