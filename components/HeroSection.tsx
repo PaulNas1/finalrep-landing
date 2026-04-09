@@ -13,7 +13,7 @@ export default function HeroSection() {
               <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
               Available on iOS
             </div>
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-black leading-[1.02] tracking-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl font-black leading-[1.1] tracking-tight mb-6">
               Track every rep.<br />
               <span className="gradient-text">Beat every set.</span>
             </h1>
