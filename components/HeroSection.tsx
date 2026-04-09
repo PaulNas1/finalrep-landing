@@ -9,16 +9,21 @@ export default function HeroSection() {
       <div className="relative max-w-7xl mx-auto px-6 py-20 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="flex flex-col items-start animate-fade-up">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6 text-xs font-medium tracking-wide" style={{ background: 'rgba(255,87,34,0.1)', border: '1px solid rgba(255,87,34,0.25)', color: '#FF5722' }}>
-              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-              Available on iOS
+            <div className="flex items-center gap-2 mb-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium tracking-wide" style={{ background: 'rgba(255,87,34,0.1)', border: '1px solid rgba(255,87,34,0.25)', color: '#FF5722' }}>
+                <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+                Available on iOS
+              </div>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium tracking-wide" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: '#999' }}>
+                Android coming soon
+              </div>
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl font-black leading-[1.1] tracking-tight mb-6">
               Track every rep.<br />
               <span className="gradient-text">Beat every set.</span>
             </h1>
             <p className="text-text-secondary text-lg md:text-xl leading-relaxed mb-8 max-w-lg">
-              FinalRep is the no-fluff workout tracker built for people who train seriously. Log workouts, crush PRs, and let AI build your next program.
+              FinalRep is the no-fluff workout tracker built for people who train seriously. Log workouts, crush PRs, and build your next program around your available equipment.
             </p>
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <AppStoreButton size="large" />

@@ -3,7 +3,7 @@ import FeatureCard from './FeatureCard'
 
 const features = [
   { icon: Dumbbell, title: 'Workout Tracking', description: 'Log sets, reps, and weight with speed. Every session is saved, searchable, and ready to beat next time.', accentColor: '#FF5722' },
-  { icon: Sparkles, title: 'AI Workout Generator', description: 'Get a personalized program built around your goals, equipment, and schedule. Single sessions or full weekly splits.', accentColor: '#FFB86B' },
+  { icon: Sparkles, title: 'Workout Generator', description: 'Get a personalized program built around your goals, equipment, and schedule. Single sessions or full weekly splits.', accentColor: '#FFB86B' },
   { icon: Trophy, title: 'Personal Records', description: 'FinalRep automatically detects and celebrates every new PR — 1RM, max weight, and max volume tracked per exercise.', accentColor: '#FF5722' },
   { icon: BarChart2, title: 'Progress Analytics', description: "Visualise your strength trends over time with clean, readable charts. See exactly where you're improving.", accentColor: '#3DDC84' },
   { icon: CloudUpload, title: 'Cloud Sync', description: 'Your data stays in sync across all your devices automatically. Always offline-first, cloud-backed.', accentColor: '#FFB86B' },
