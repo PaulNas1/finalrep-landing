@@ -20,7 +20,7 @@ export default function SupportPage() {
     },
     {
       q: 'How do I delete a workout or template?',
-      a: 'Swipe left on any entry in the History or Workouts tab to reveal the delete option.',
+      a: 'Long press on any workout in the History or Workouts tab to bring up the options menu, then tap Delete.',
     },
   ]
 

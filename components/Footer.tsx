@@ -13,6 +13,7 @@ export default function Footer() {
           <nav className="flex items-center gap-6 text-sm text-text-muted">
             <a href="/privacy" className="hover:text-white transition-colors duration-200">Privacy Policy</a>
             <a href="/terms" className="hover:text-white transition-colors duration-200">Terms of Use</a>
+            <a href="/support" className="hover:text-white transition-colors duration-200">Support</a>
             <a href="https://apps.apple.com/au/app/finalrep-workout-tracker/id6758363706" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">App Store</a>
           </nav>
           <p className="text-text-muted text-sm">© {year} FinalRep. All rights reserved.</p>
