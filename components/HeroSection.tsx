@@ -14,9 +14,6 @@ export default function HeroSection() {
                 <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
                 Available on iOS
               </div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium tracking-wide" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: '#999' }}>
-                Android coming soon
-              </div>
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl font-black leading-[1.1] tracking-tight mb-6">
               Track every rep.<br />
@@ -27,12 +24,12 @@ export default function HeroSection() {
             </p>
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <AppStoreButton size="large" />
-              <p className="text-text-muted text-sm">Free to download · Premium features available</p>
+              <p className="text-text-muted text-sm">Free to use · 14-day Premium trial</p>
             </div>
             <div className="flex items-center gap-8 mt-12 pt-8 border-t border-border/50">
               <div className="flex items-center gap-2"><span className="text-accent text-lg">✦</span><p className="text-sm text-text-secondary">Offline first</p></div>
               <div className="w-px h-5 bg-border" />
-              <div className="flex items-center gap-2"><span className="text-accent text-lg">✦</span><p className="text-sm text-text-secondary">AI-powered programs</p></div>
+              <div className="flex items-center gap-2"><span className="text-accent text-lg">✦</span><p className="text-sm text-text-secondary">Auto-generated programs</p></div>
               <div className="w-px h-5 bg-border" />
               <div className="flex items-center gap-2"><span className="text-accent text-lg">✦</span><p className="text-sm text-text-secondary">Cloud sync</p></div>
             </div>

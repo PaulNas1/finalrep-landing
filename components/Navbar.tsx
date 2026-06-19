@@ -12,6 +12,7 @@ export default function Navbar() {
         </a>
         <nav className="hidden md:flex items-center gap-10">
           <a href="#features" className="text-base text-text-secondary hover:text-white transition-colors duration-200 font-medium">Features</a>
+          <a href="#pricing" className="text-base text-text-secondary hover:text-white transition-colors duration-200 font-medium">Pricing</a>
           <a href="#download" className="text-base text-text-secondary hover:text-white transition-colors duration-200 font-medium">Download</a>
           <a href="/privacy" className="text-base text-text-secondary hover:text-white transition-colors duration-200 font-medium">Privacy</a>
           <a href="/support" className="text-base text-text-secondary hover:text-white transition-colors duration-200 font-medium">Support</a>
