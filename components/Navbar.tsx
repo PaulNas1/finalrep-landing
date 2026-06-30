@@ -1,24 +1,61 @@
-'use client'
-
-import Image from 'next/image'
+import { APP_STORE_URL } from '@/lib/content'
 
 export default function Navbar() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50" style={{ backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', background: 'rgba(11, 12, 16, 0.85)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-      <div className="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-3">
-          <Image src="/icon.png" alt="FinalRep" width={44} height={44} className="rounded-xl" unoptimized />
-          <span className="font-black text-2xl tracking-tight">Final<span className="text-accent">Rep</span></span>
+    <header
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 50,
+        backdropFilter: 'blur(18px)',
+        WebkitBackdropFilter: 'blur(18px)',
+        background: 'rgba(10,11,13,.72)',
+        borderBottom: '1px solid rgba(255,255,255,.06)',
+      }}
+    >
+      <div
+        style={{
+          maxWidth: 1200,
+          margin: '0 auto',
+          height: 74,
+          padding: '0 28px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
+        <a href="#top" style={{ display: 'flex', alignItems: 'center', gap: 12, textDecoration: 'none' }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo_wordmark.png" alt="FinalRep" style={{ height: 30, width: 'auto', display: 'block' }} />
         </a>
-        <nav className="hidden md:flex items-center gap-10">
-          <a href="#features" className="text-base text-text-secondary hover:text-white transition-colors duration-200 font-medium">Features</a>
-          <a href="#pricing" className="text-base text-text-secondary hover:text-white transition-colors duration-200 font-medium">Pricing</a>
-          <a href="#download" className="text-base text-text-secondary hover:text-white transition-colors duration-200 font-medium">Download</a>
-          <a href="/privacy" className="text-base text-text-secondary hover:text-white transition-colors duration-200 font-medium">Privacy</a>
-          <a href="/support" className="text-base text-text-secondary hover:text-white transition-colors duration-200 font-medium">Support</a>
+        <nav className="fr-nav-links" style={{ display: 'flex', alignItems: 'center', gap: 38 }}>
+          <a href="#features" className="fr-navlink" style={{ fontSize: 15, fontWeight: 500, textDecoration: 'none' }}>Features</a>
+          <a href="#movements" className="fr-navlink" style={{ fontSize: 15, fontWeight: 500, textDecoration: 'none' }}>Movements</a>
+          <a href="#pricing" className="fr-navlink" style={{ fontSize: 15, fontWeight: 500, textDecoration: 'none' }}>Pricing</a>
         </nav>
-        <a href="https://apps.apple.com/au/app/finalrep-workout-tracker/id6758363706" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-accent hover:bg-accent-hover text-white text-base font-semibold transition-all duration-200 hover:shadow-[0_4px_20px_rgba(255,87,34,0.4)] active:scale-95">
-          <span>Download Free</span>
+        <a
+          href={APP_STORE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fr-btn-nav"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: 9,
+            padding: '11px 22px',
+            borderRadius: 13,
+            background: 'var(--accent, #FF5722)',
+            color: '#fff',
+            fontSize: 15,
+            fontWeight: 700,
+            textDecoration: 'none',
+            letterSpacing: '.2px',
+            boxShadow: '0 4px 24px rgba(255,87,34,.32)',
+          }}
+        >
+          Download Free
         </a>
       </div>
     </header>

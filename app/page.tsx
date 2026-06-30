@@ -1,6 +1,8 @@
 import Navbar from '@/components/Navbar'
 import HeroSection from '@/components/HeroSection'
+import Marquee from '@/components/Marquee'
 import FeaturesSection from '@/components/FeaturesSection'
+import MovementsSection from '@/components/MovementsSection'
 import StatementSection from '@/components/StatementSection'
 import PricingSection from '@/components/PricingSection'
 import DownloadSection from '@/components/DownloadSection'
@@ -12,7 +14,9 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection />
+        <Marquee />
         <FeaturesSection />
+        <MovementsSection />
         <StatementSection />
         <PricingSection />
         <DownloadSection />

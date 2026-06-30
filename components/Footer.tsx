@@ -1,23 +1,22 @@
-import Image from 'next/image'
-
 export default function Footer() {
-  const year = new Date().getFullYear()
   return (
-    <footer className="border-t py-10" style={{ borderColor: 'rgba(255,255,255,0.05)' }}>
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-2">
-            <Image src="/icon.png" alt="FinalRep" width={28} height={28} className="rounded-xl" unoptimized />
-            <span className="font-black text-sm tracking-tight">Final<span className="text-accent">Rep</span></span>
-          </div>
-          <nav className="flex items-center gap-6 text-sm text-text-muted">
-            <a href="/privacy" className="hover:text-white transition-colors duration-200">Privacy Policy</a>
-            <a href="/terms" className="hover:text-white transition-colors duration-200">Terms of Use</a>
-            <a href="/support" className="hover:text-white transition-colors duration-200">Support</a>
-            <a href="https://apps.apple.com/au/app/finalrep-workout-tracker/id6758363706" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">App Store</a>
-          </nav>
-          <p className="text-text-muted text-sm">© {year} FinalRep. All rights reserved.</p>
-        </div>
+    <footer style={{ borderTop: '1px solid rgba(255,255,255,.07)', padding: '46px 28px' }}>
+      <div
+        style={{
+          maxWidth: 1200, margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+          gap: 24, flexWrap: 'wrap',
+        }}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/logo_wordmark.png" alt="FinalRep" style={{ height: 26, width: 'auto' }} />
+        <nav style={{ display: 'flex', gap: 28, flexWrap: 'wrap' }}>
+          <a href="#features" className="fr-navlink" style={{ fontSize: 14, textDecoration: 'none' }}>Features</a>
+          <a href="#pricing" className="fr-navlink" style={{ fontSize: 14, textDecoration: 'none' }}>Pricing</a>
+          <a href="/privacy" className="fr-navlink" style={{ fontSize: 14, textDecoration: 'none' }}>Privacy</a>
+          <a href="/terms" className="fr-navlink" style={{ fontSize: 14, textDecoration: 'none' }}>Terms</a>
+          <a href="/support" className="fr-navlink" style={{ fontSize: 14, textDecoration: 'none' }}>Support</a>
+        </nav>
+        <span style={{ fontSize: 13, color: '#5E626B' }}>© 2026 FinalRep. Train serious.</span>
       </div>
     </footer>
   )

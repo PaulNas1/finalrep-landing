@@ -1,30 +1,86 @@
-import { Dumbbell, Sparkles, Trophy, BarChart2, CloudUpload, Download } from 'lucide-react'
-import FeatureCard from './FeatureCard'
+import Reveal from './Reveal'
+import PhoneMockup from './PhoneMockup'
+import { features, type Feature } from '@/lib/content'
 
-const features = [
-  { icon: Dumbbell, title: 'Workout Tracking', description: 'Log sets, reps, and weight with speed. Every session is saved, searchable, and ready to beat next time.', accentColor: '#FF5722' },
-  { icon: Sparkles, title: 'Workout Generator', description: 'Get a personalized program built around your goals, equipment, and schedule. Single sessions or full weekly splits.', accentColor: '#FFB86B' },
-  { icon: Trophy, title: 'Personal Records', description: 'FinalRep automatically detects and celebrates every new PR — 1RM, max weight, and max volume tracked per exercise.', accentColor: '#FF5722' },
-  { icon: BarChart2, title: 'Progress Analytics', description: "Visualise your strength trends over time with clean, readable charts. See exactly where you're improving.", accentColor: '#3DDC84' },
-  { icon: CloudUpload, title: 'Cloud Sync', description: 'Your data stays in sync across all your devices automatically. Always offline-first, cloud-backed.', accentColor: '#FFB86B' },
-  { icon: Download, title: 'Data Export', description: 'Export your full workout history as CSV anytime. Your data belongs to you — always.', accentColor: '#FF5722' },
-]
+function FeatureRow({ f }: { f: Feature }) {
+  const text = (
+    <div>
+      <span
+        className="font-display"
+        style={{ display: 'inline-block', fontSize: 18, color: 'rgba(255,255,255,.18)', letterSpacing: '2px', marginBottom: 18 }}
+      >
+        {f.num}
+      </span>
+      <h3 className="font-display" style={{ fontSize: 'clamp(30px,3.4vw,46px)', lineHeight: 1.02, letterSpacing: '.5px', marginBottom: 20 }}>
+        {f.title}
+      </h3>
+      <p style={{ fontSize: 17, lineHeight: 1.6, color: '#A9AEB8', maxWidth: 440, marginBottom: 26 }}>{f.body}</p>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 13 }}>
+        {f.bullets.map((b) => (
+          <div key={b} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+            <span
+              style={{
+                flexShrink: 0, width: 22, height: 22, borderRadius: 7, background: 'rgba(255,87,34,.12)',
+                border: '1px solid rgba(255,87,34,.3)', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                color: 'var(--accent,#FF5722)', fontSize: 12, fontWeight: 800,
+              }}
+            >
+              ✓
+            </span>
+            <span style={{ fontSize: 15, color: '#D4D7DD', fontWeight: 500 }}>{b}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+
+  const phone = (
+    <div className="fr-feature-phone" style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
+      <div
+        style={{
+          position: 'absolute', width: '70%', height: '70%', borderRadius: '50%',
+          background: 'radial-gradient(circle,rgba(255,87,34,.14),transparent 70%)', filter: 'blur(40px)', opacity: 'var(--glow,1)',
+        }}
+      />
+      <PhoneMockup screenshot={f.shot} alt={f.title} radius={46} width={300} style={{ maxWidth: '78vw' }} />
+    </div>
+  )
+
+  return (
+    <Reveal className="fr-feature-row" style={{ padding: '54px 0' }}>
+      {f.phoneFirst ? (
+        <>
+          {phone}
+          {text}
+        </>
+      ) : (
+        <>
+          {text}
+          {phone}
+        </>
+      )}
+    </Reveal>
+  )
+}
 
 export default function FeaturesSection() {
   return (
-    <section id="features" className="relative py-24 lg:py-32">
-      <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at 50% 0%, rgba(255,87,34,0.04) 0%, transparent 60%)' }} />
-      <div className="relative max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <p className="text-accent text-sm font-semibold uppercase tracking-widest mb-3">Features</p>
-          <h2 className="text-4xl md:text-5xl font-black tracking-tight text-white mb-4">Everything you need to<br /><span className="gradient-text">train smarter</span></h2>
-          <p className="text-text-secondary text-lg max-w-xl mx-auto">Built for people who are serious about training. No fluff, no bloat — just the tools that matter.</p>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {features.map((feature) => (
-            <FeatureCard key={feature.title} icon={feature.icon} title={feature.title} description={feature.description} accentColor={feature.accentColor} />
-          ))}
-        </div>
+    <section id="features" style={{ position: 'relative', padding: '120px 28px 40px' }}>
+      <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+        <Reveal style={{ textAlign: 'center', marginBottom: 90, maxWidth: 680, marginLeft: 'auto', marginRight: 'auto' }}>
+          <p style={{ fontSize: 13, fontWeight: 700, letterSpacing: '2.5px', textTransform: 'uppercase', color: 'var(--accent,#FF5722)', marginBottom: 18 }}>
+            The Toolkit
+          </p>
+          <h2 className="font-display" style={{ fontSize: 'clamp(38px,4.8vw,68px)', lineHeight: 1, letterSpacing: '.5px' }}>
+            Everything you need.
+            <br />
+            <span className="fr-om">Nothing you don&apos;t.</span>
+          </h2>
+        </Reveal>
+
+        {features.map((f) => (
+          <FeatureRow key={f.num} f={f} />
+        ))}
       </div>
     </section>
   )

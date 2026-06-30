@@ -2,10 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+/* Fonts are loaded via next/font in app/layout.tsx and exposed as
+   --font-anton and --font-inter CSS variables on <html>. */
+
+:root {
+  --accent: #FF5722;
+  --glow: 1;
+}
+
+* {
+  box-sizing: border-box;
+}
 
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0A0B0D;
+  color: #ffffff;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 ::selection {
@@ -13,26 +32,96 @@ html {
   color: #ffffff;
 }
 
-body {
-  background-color: #0B0C10;
-  color: #ffffff;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.phone-glow {
-  filter: drop-shadow(0 40px 80px rgba(255, 87, 34, 0.12))
-          drop-shadow(0 20px 40px rgba(0, 0, 0, 0.6));
-}
-
-.gradient-text {
-  background: linear-gradient(135deg, #FF5722 0%, #FFB86B 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #0B0C10; }
-::-webkit-scrollbar-thumb { background: #27272A; border-radius: 3px; }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #0A0B0D; }
+::-webkit-scrollbar-thumb { background: #26282E; border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: #FF5722; }
+
+/* ---------- Display font helper ---------- */
+.font-display {
+  font-family: var(--font-anton), sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+/* ---------- Keyframes (kept as plain CSS per handoff §5A) ---------- */
+@keyframes heroUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-14px); }
+}
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: .35; }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.anim-hero-1 { opacity: 0; animation: heroUp .8s cubic-bezier(.2,.7,.2,1) .05s forwards; }
+.anim-hero-2 { opacity: 0; animation: heroUp .9s cubic-bezier(.2,.7,.2,1) .2s forwards; }
+.anim-floaty { animation: floaty 6s ease-in-out infinite; }
+.anim-pulse  { animation: pulseDot 1.8s ease-in-out infinite; }
+.anim-marquee { animation: marquee 26s linear infinite; }
+
+/* ---------- Text-stroke outline headlines (handoff §5B: MUST be classes) ---------- */
+.fr-os { -webkit-text-stroke: 1.6px rgba(255,255,255,.92); }
+.fr-om { -webkit-text-stroke: 1.5px rgba(255,255,255,.6);  -webkit-text-fill-color: rgba(255,255,255,.07); color: transparent; }
+.fr-od { -webkit-text-stroke: 1.5px rgba(255,255,255,.5);  -webkit-text-fill-color: rgba(255,255,255,.05); color: transparent; }
+.fr-ot { -webkit-text-stroke: 1px   rgba(255,255,255,.16); color: transparent; }
+
+/* ---------- Hover utilities (handoff §5A: convert style-hover to :hover) ---------- */
+.fr-navlink { color: #A9AEB8; transition: color .2s; }
+.fr-navlink:hover { color: #fff; }
+
+.fr-btn-primary { transition: transform .15s, box-shadow .2s; }
+.fr-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 44px rgba(255,87,34,.6); }
+
+.fr-btn-nav { transition: transform .15s, box-shadow .2s; }
+.fr-btn-nav:hover { transform: translateY(-1px); box-shadow: 0 8px 30px rgba(255,87,34,.5); }
+
+.fr-btn-ghost { transition: background .2s; }
+.fr-btn-ghost:hover { background: rgba(255,255,255,.12); }
+
+.fr-card { transition: border-color .25s, transform .25s; }
+.fr-card:hover { border-color: rgba(255,87,34,.45); transform: translateY(-4px); }
+
+.fr-emaillink:hover { text-decoration: underline; }
+
+/* ---------- Scroll reveal (handoff §5C-1) ---------- */
+.fr-reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
+.fr-reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-hero-1, .anim-hero-2 { animation: none; opacity: 1; }
+  .anim-floaty, .anim-pulse, .anim-marquee { animation: none; }
+  .fr-reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ---------- Layout grids (desktop defaults) ---------- */
+.fr-hero-grid     { display: grid; grid-template-columns: 1.15fr .85fr; gap: 40px; align-items: center; }
+.fr-feature-row   { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px,7vw,110px); align-items: center; }
+.fr-movements-grid{ display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; }
+.fr-built-grid    { display: grid; grid-template-columns: 1fr 1fr; }
+.fr-built-photos  { display: grid; grid-template-columns: 1fr 1fr; }
+.fr-pricing-grid  { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+
+/* tablet */
+@media (max-width: 960px) {
+  .fr-movements-grid { grid-template-columns: repeat(2,1fr); }
+}
+
+/* mobile */
+@media (max-width: 860px) {
+  .fr-nav-links    { display: none !important; }
+  .fr-hero-grid    { grid-template-columns: 1fr; gap: 48px; }
+  .fr-hero-phones  { min-height: 540px !important; }
+  .fr-feature-row  { grid-template-columns: 1fr; gap: 40px; }
+  .fr-built-grid   { grid-template-columns: 1fr; }
+  .fr-built-photos { min-height: 340px; }
+  .fr-pricing-grid { grid-template-columns: 1fr; }
+}

@@ -1,46 +1,99 @@
 import AppStoreButton from './AppStoreButton'
 import PhoneMockup from './PhoneMockup'
+import { heroChips } from '@/lib/content'
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(255,87,34,0.12) 0%, transparent 70%)', filter: 'blur(40px)', transform: 'translate(20%, -20%)' }} />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(255,184,107,0.05) 0%, transparent 70%)', filter: 'blur(60px)', transform: 'translate(-30%, 30%)' }} />
-      <div className="relative max-w-7xl mx-auto px-6 py-20 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div className="flex flex-col items-start animate-fade-up">
-            <div className="flex items-center gap-2 mb-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium tracking-wide" style={{ background: 'rgba(255,87,34,0.1)', border: '1px solid rgba(255,87,34,0.25)', color: '#FF5722' }}>
-                <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-                Available on iOS
-              </div>
-            </div>
-            <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl font-black leading-[1.1] tracking-tight mb-6">
-              Track every rep.<br />
-              <span className="gradient-text">Beat every set.</span>
-            </h1>
-            <p className="text-text-secondary text-lg md:text-xl leading-relaxed mb-8 max-w-lg">
-              FinalRep is the no-fluff workout tracker built for people who train seriously. Log workouts, crush PRs, and build your next program around your available equipment.
-            </p>
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <AppStoreButton size="large" />
-              <p className="text-text-muted text-sm">Free to use · 14-day Premium trial</p>
-            </div>
-            <div className="flex items-center gap-8 mt-12 pt-8 border-t border-border/50">
-              <div className="flex items-center gap-2"><span className="text-accent text-lg">✦</span><p className="text-sm text-text-secondary">Offline first</p></div>
-              <div className="w-px h-5 bg-border" />
-              <div className="flex items-center gap-2"><span className="text-accent text-lg">✦</span><p className="text-sm text-text-secondary">Auto-generated programs</p></div>
-              <div className="w-px h-5 bg-border" />
-              <div className="flex items-center gap-2"><span className="text-accent text-lg">✦</span><p className="text-sm text-text-secondary">Cloud sync</p></div>
-            </div>
+    <section
+      id="top"
+      style={{
+        position: 'relative',
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        padding: '120px 28px 70px',
+        overflow: 'hidden',
+      }}
+    >
+      {/* background glows */}
+      <div
+        style={{
+          position: 'absolute', top: '-10%', right: '-8%', width: 780, height: 780, borderRadius: '50%',
+          pointerEvents: 'none', background: 'radial-gradient(circle at center,rgba(255,87,34,.18) 0%,transparent 68%)',
+          filter: 'blur(30px)', opacity: 'var(--glow,1)',
+        }}
+      />
+      <div
+        style={{
+          position: 'absolute', bottom: '-20%', left: '-12%', width: 560, height: 560, borderRadius: '50%',
+          pointerEvents: 'none', background: 'radial-gradient(circle at center,rgba(255,138,61,.09) 0%,transparent 70%)',
+          filter: 'blur(50px)', opacity: 'var(--glow,1)',
+        }}
+      />
+
+      <div className="fr-hero-grid" style={{ position: 'relative', maxWidth: 1200, margin: '0 auto', width: '100%' }}>
+        {/* left / copy */}
+        <div className="anim-hero-1">
+          <div
+            style={{
+              display: 'inline-flex', alignItems: 'center', gap: 9, padding: '7px 14px', borderRadius: 999,
+              background: 'rgba(255,87,34,.1)', border: '1px solid rgba(255,87,34,.28)', marginBottom: 30,
+            }}
+          >
+            <span className="anim-pulse" style={{ width: 7, height: 7, borderRadius: '50%', background: 'var(--accent,#FF5722)' }} />
+            <span style={{ fontSize: 12.5, fontWeight: 600, letterSpacing: '.6px', color: 'var(--accent,#FF5722)', textTransform: 'uppercase' }}>
+              Now on the App Store · iOS
+            </span>
           </div>
-          <div className="relative flex justify-center lg:justify-end items-center h-[620px] lg:h-[760px]">
-            <div className="absolute" style={{ right: '2%', top: '5%', width: '260px', transform: 'rotate(6deg)', opacity: 0.65, zIndex: 0 }}>
-              <PhoneMockup screenshot="/screenshots/screen-2.PNG" alt="FinalRep progress tracking" />
-            </div>
-            <div className="absolute" style={{ left: '2%', bottom: '3%', width: '290px', transform: 'rotate(-2deg)', zIndex: 1 }}>
-              <PhoneMockup screenshot="/screenshots/screen-1.PNG" alt="FinalRep workout tracking" priority />
-            </div>
+
+          <h1
+            className="font-display"
+            style={{ fontSize: 'clamp(52px,7.2vw,104px)', lineHeight: 0.92, letterSpacing: '.5px', marginBottom: 26 }}
+          >
+            <span style={{ display: 'block', color: '#fff' }}>Track every</span>
+            <span style={{ display: 'block', color: '#fff' }}>rep.</span>
+            <span style={{ display: 'block', color: 'var(--accent,#FF5722)' }}>Beat every set.</span>
+          </h1>
+
+          <p style={{ fontSize: 'clamp(17px,1.4vw,20px)', lineHeight: 1.55, color: '#A9AEB8', maxWidth: 480, marginBottom: 36 }}>
+            The no-fluff workout tracker built for people who train seriously. Log every set, smash every PR, and let
+            FinalRep build your next program around the equipment you actually have.
+          </p>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: 20, flexWrap: 'wrap' }}>
+            <AppStoreButton size="large" />
+            <span style={{ fontSize: 14, color: '#71757F', lineHeight: 1.4 }}>
+              Free forever.
+              <br />
+              14-day Premium trial.
+            </span>
+          </div>
+
+          <div
+            style={{
+              display: 'flex', alignItems: 'center', gap: 22, marginTop: 44, paddingTop: 30,
+              borderTop: '1px solid rgba(255,255,255,.07)', flexWrap: 'wrap',
+            }}
+          >
+            {heroChips.map((chip) => (
+              <div key={chip} style={{ display: 'flex', alignItems: 'center', gap: 9 }}>
+                <span style={{ color: 'var(--accent,#FF5722)', fontSize: 17, lineHeight: 1 }}>✦</span>
+                <span style={{ fontSize: 14, color: '#A9AEB8', fontWeight: 500 }}>{chip}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* right / phones */}
+        <div
+          className="anim-hero-2 fr-hero-phones"
+          style={{ position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: 620 }}
+        >
+          <div style={{ position: 'absolute', right: '2%', top: '4%', width: 230, transform: 'rotate(5deg)', opacity: 0.62, zIndex: 0 }}>
+            <PhoneMockup screenshot="/screenshots/screen-3.PNG" alt="FinalRep progress" radius={38} />
+          </div>
+          <div className="anim-floaty" style={{ position: 'relative', width: 282, transform: 'rotate(-2deg)', zIndex: 1 }}>
+            <PhoneMockup screenshot="/screenshots/screen-1.PNG" alt="FinalRep home" radius={44} glow />
           </div>
         </div>
       </div>

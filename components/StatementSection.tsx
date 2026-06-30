@@ -1,39 +1,58 @@
-import PhoneMockup from './PhoneMockup'
+import Reveal from './Reveal'
+import { statements } from '@/lib/content'
 
 export default function StatementSection() {
   return (
-    <section className="relative py-24 lg:py-32 overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(180deg, transparent 0%, rgba(255,87,34,0.04) 50%, transparent 100%)' }} />
-      <div className="relative max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="relative flex justify-center lg:justify-start items-center h-[480px]">
-            <div className="absolute" style={{ left: '10%', top: '5%', width: '210px', transform: 'rotate(-3deg)', opacity: 0.6, zIndex: 0 }}>
-              <PhoneMockup screenshot="/screenshots/screen-4.PNG" alt="FinalRep 1RM testing" />
+    <section style={{ position: 'relative', padding: '60px 28px 110px' }}>
+      <Reveal
+        style={{
+          maxWidth: 1200, margin: '0 auto', position: 'relative', borderRadius: 28, overflow: 'hidden',
+          border: '1px solid rgba(255,255,255,.08)', background: '#0E1014',
+        }}
+      >
+        <div className="fr-built-grid" style={{ minHeight: 460 }}>
+          {/* photo half */}
+          <div className="fr-built-photos" style={{ position: 'relative', overflow: 'hidden', background: '#0A0B0D' }}>
+            <div style={{ position: 'relative', overflow: 'hidden', background: '#0A0B0D' }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/lift-female.jpg" alt="Athlete training" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: '60% 35%', display: 'block' }} />
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg,transparent 55%,rgba(8,9,11,.55) 100%)' }} />
             </div>
-            <div className="absolute" style={{ right: '5%', bottom: '5%', width: '235px', zIndex: 1 }}>
-              <PhoneMockup screenshot="/screenshots/screen-3.PNG" alt="FinalRep progress charts" />
+            <div style={{ position: 'relative', overflow: 'hidden', background: '#0A0B0D', borderLeft: '1px solid rgba(255,255,255,.06)' }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/lift-male.jpg" alt="Athlete training" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 28%', display: 'block' }} />
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg,transparent 55%,rgba(8,9,11,.55) 100%)' }} />
+            </div>
+            {/* BUILT DIFFERENT overlay */}
+            <div style={{ position: 'absolute', left: 0, bottom: 0, padding: '24px 26px', zIndex: 2, pointerEvents: 'none' }}>
+              <span className="fr-od font-display" style={{ display: 'block', fontSize: 'clamp(30px,3.4vw,48px)', letterSpacing: '1px', lineHeight: 0.92 }}>
+                Built
+              </span>
+              <span className="font-display" style={{ display: 'block', fontSize: 'clamp(30px,3.4vw,48px)', color: 'var(--accent,#FF5722)', letterSpacing: '1px', lineHeight: 0.92 }}>
+                Different
+              </span>
             </div>
           </div>
-          <div>
-            <p className="text-accent text-sm font-semibold uppercase tracking-widest mb-4">Built different</p>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-6">For people who<br /><span className="gradient-text">actually train.</span></h2>
-            <div className="space-y-6">
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-1 rounded-full" style={{ background: '#FF5722' }} />
-                <div><h3 className="text-white font-semibold mb-1">1RM Testing Protocol</h3><p className="text-text-secondary text-sm leading-relaxed">Auto-calculated warmup sets at 50%, 70%, 80%, 90% of your estimated max. Test properly, not randomly.</p></div>
-              </div>
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-1 rounded-full" style={{ background: '#FFB86B' }} />
-                <div><h3 className="text-white font-semibold mb-1">Offline First, Always</h3><p className="text-text-secondary text-sm leading-relaxed">No signal in the gym? Doesn&apos;t matter. FinalRep works completely offline and syncs when you&apos;re back on Wi-Fi.</p></div>
-              </div>
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-1 rounded-full" style={{ background: '#3DDC84' }} />
-                <div><h3 className="text-white font-semibold mb-1">Smart Weekly Programs</h3><p className="text-text-secondary text-sm leading-relaxed">Choose your training days, goal, and available equipment. Get a complete week — Push/Pull/Legs, Upper/Lower, and more.</p></div>
-              </div>
+
+          {/* text half */}
+          <div style={{ padding: 'clamp(36px,4vw,60px)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <p style={{ fontSize: 13, fontWeight: 700, letterSpacing: '2.5px', textTransform: 'uppercase', color: 'var(--accent,#FF5722)', marginBottom: 26 }}>
+              For people who actually train
+            </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
+              {statements.map((s) => (
+                <div key={s.title} style={{ display: 'flex', gap: 18 }}>
+                  <span style={{ flexShrink: 0, width: 4, borderRadius: 4, background: 'var(--accent,#FF5722)' }} />
+                  <div>
+                    <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 7 }}>{s.title}</h3>
+                    <p style={{ fontSize: 15, lineHeight: 1.55, color: '#A9AEB8' }}>{s.body}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
-      </div>
+      </Reveal>
     </section>
   )
 }
