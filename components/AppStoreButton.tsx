@@ -1,4 +1,7 @@
+'use client'
+
 import { APP_STORE_URL } from '@/lib/content'
+import { trackAppStoreClick } from '@/lib/analytics'
 
 interface AppStoreButtonProps {
   /** large = hero / final CTA size; default = slightly smaller */
@@ -13,6 +16,7 @@ export default function AppStoreButton({ size = 'large' }: AppStoreButtonProps) 
       href={APP_STORE_URL}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={trackAppStoreClick}
       className="fr-btn-primary"
       style={{
         display: 'inline-flex',

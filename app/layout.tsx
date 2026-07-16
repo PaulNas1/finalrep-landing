@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Anton, Inter } from 'next/font/google'
 import './globals.css'
+import Analytics from '@/components/Analytics'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -64,6 +65,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${inter.variable} ${anton.variable} scroll-smooth`}>
       <body className="antialiased overflow-x-hidden" style={{ background: '#0A0B0D', color: '#fff' }}>
+        <Analytics />
         {children}
       </body>
     </html>
