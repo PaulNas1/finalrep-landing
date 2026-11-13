@@ -22,12 +22,13 @@ function Item({ children }: { children: React.ReactNode }) {
 
 export default function PrivacyPage() {
   return (
-    <LegalShell eyebrow="Legal" title="Privacy Policy" meta="Last updated: February 2026">
+    <LegalShell eyebrow="Legal" title="Privacy Policy" meta="Last updated: November 2026">
       <LegalProse>
         <p>
           This Privacy Policy describes how Paul Nasrallah (“we”, “us”, or “our”) collects, uses, and handles your
-          information when you use the FinalRep mobile application (“App”). We are committed to protecting your privacy in
-          accordance with the Privacy Act 1988 (Cth) and the Australian Privacy Principles (APPs).
+          information when you use the FinalRep mobile app and its Apple Watch app (together, the “App”) and our website,
+          finalrep.io (the “Website”). We are committed to protecting your privacy in accordance with the Privacy Act 1988
+          (Cth) and the Australian Privacy Principles (APPs).
         </p>
 
         <section>
@@ -36,14 +37,19 @@ export default function PrivacyPage() {
           <ul style={ul}>
             <Item>Account information — email address and display name when you create an account.</Item>
             <Item>Profile photo — if you choose to upload one.</Item>
-            <Item>Workout data — exercises, sets, reps, weights, durations, and session timestamps you log in the App.</Item>
+            <Item>Training profile — your goal and training days, and, if you choose to provide them, your gender, year of birth and height.</Item>
+            <Item>Workout data — exercises, sets, reps, weights, effort ratings (RPE), durations, and session timestamps you log in the App.</Item>
             <Item>Body measurements — weight, body fat percentage, and other physical measurements you choose to record.</Item>
             <Item>Personal records — one-rep max estimates and strength benchmarks you track.</Item>
             <Item>Equipment preferences — gym equipment you indicate you have access to.</Item>
-            <Item>Subscription status — whether you have an active FinalRep subscription.</Item>
+            <Item>Purchase status — whether you have an active FinalRep Premium subscription, free trial or Lifetime purchase.</Item>
             <Item>Device information — device type and operating system version, collected automatically for crash reporting and performance monitoring.</Item>
+            <Item>Advertising measurement — events such as app installs, sign-ups and purchases, and, only if you allow tracking when iOS asks, your device&apos;s advertising identifier (see Meta in section 3).</Item>
           </ul>
-          <p style={{ marginTop: 16 }}>We do not collect precise location data, contacts, or any biometric identifiers.</p>
+          <p style={{ marginTop: 16 }}>
+            We do not collect precise location data, contacts, or any biometric identifiers. Heart rate read by the Apple Watch
+            app stays on your devices (see section 4).
+          </p>
         </section>
 
         <section>
@@ -51,12 +57,16 @@ export default function PrivacyPage() {
           <p style={{ marginBottom: 14 }}>We use the information we collect to:</p>
           <ul style={ul}>
             <Item>Provide and operate the App, including syncing your data across devices.</Item>
-            <Item>Personalise your experience, such as generating workout recommendations based on your equipment and history.</Item>
-            <Item>Process and manage your subscription.</Item>
+            <Item>Personalise your experience, such as building your training plan and suggesting weights based on your goal, equipment and workout history.</Item>
+            <Item>Process and manage your subscription or purchase.</Item>
+            <Item>Measure how well our ads and Website work (see sections 3 and 5).</Item>
             <Item>Diagnose technical problems and improve App performance.</Item>
             <Item>Respond to your support requests.</Item>
           </ul>
-          <p style={{ marginTop: 16 }}>We do not sell your personal information to third parties. We do not use your data for advertising purposes.</p>
+          <p style={{ marginTop: 16 }}>
+            We do not sell your personal information. We never use your workouts, body measurements or Apple Health data for
+            advertising, and we never share them with advertisers.
+          </p>
         </section>
 
         <section>
@@ -64,19 +74,45 @@ export default function PrivacyPage() {
           <p style={{ marginBottom: 14 }}>FinalRep uses the following third-party services to operate. Each has its own privacy policy:</p>
           <ul style={ul}>
             <Item><strong style={{ color: '#fff' }}>Google Firebase</strong> (Authentication, Firestore, Analytics) — your account and workout data is stored on Firebase servers operated by Google LLC. Firebase may store data in the United States.</Item>
-            <Item><strong style={{ color: '#fff' }}>RevenueCat</strong> — manages in-app subscription purchases and restores.</Item>
-            <Item><strong style={{ color: '#fff' }}>Apple App Store</strong> — payment processing for subscriptions is handled by Apple.</Item>
+            <Item><strong style={{ color: '#fff' }}>RevenueCat</strong> — manages in-app purchases (subscriptions and Lifetime) and restores.</Item>
+            <Item><strong style={{ color: '#fff' }}>Apple App Store</strong> — payment for subscriptions and one-time purchases is handled by Apple.</Item>
+            <Item><strong style={{ color: '#fff' }}>Meta Platforms</strong> — the Meta (Facebook) SDK in the App and the Meta Pixel on the Website tell us which of our ads led to Website visits, app installs, sign-ups and purchases. In the App, your device&apos;s advertising identifier is used only if you allow tracking when iOS asks; you can change this at any time in iOS Settings → Privacy &amp; Security → Tracking. We never share your workouts, body measurements or Apple Health data with Meta.</Item>
+            <Item><strong style={{ color: '#fff' }}>Google Analytics</strong> — measures visits to the Website.</Item>
           </ul>
           <p style={{ marginTop: 16 }}>By using the App, you acknowledge that your data may be transferred to and processed in countries outside Australia, including the United States, in connection with these services.</p>
         </section>
 
         <section>
-          <h2 style={h2}>4. Data Retention</h2>
+          <h2 style={h2}>4. Apple Health and Apple Watch</h2>
+          <p style={{ marginBottom: 14 }}>
+            FinalRep can save your workouts to Apple Health. Nothing is saved until you turn on Save to Apple Health in the App
+            (Settings → Preferences), or allow it on your Apple Watch.
+          </p>
+          <ul style={ul}>
+            <Item>The iPhone app writes your completed workouts and, if you use Body Stats, your weight and body fat percentage. It does not read data from Apple Health.</Item>
+            <Item>During a workout, the Apple Watch app reads your heart rate to show it on screen, and saves your heart rate and active calories with the workout in Apple Health.</Item>
+            <Item>Data from Apple Health stays on your devices. We do not send it to our servers or to any third party, and we do not use it for advertising, marketing or analytics.</Item>
+            <Item>You can turn off FinalRep&apos;s access at any time in the Health app (your profile → Apps → FinalRep) or in iOS Settings → Privacy &amp; Security → Health.</Item>
+          </ul>
+        </section>
+
+        <section>
+          <h2 style={h2}>5. Our Website</h2>
+          <p>
+            The Website uses Google Analytics and the Meta Pixel, which use cookies and similar technologies, to count visits
+            and measure our ads. If you arrive through an ad or a link with campaign tags, we keep those tags (UTM parameters
+            and Meta&apos;s click ID) in your browser&apos;s local storage for up to 30 days, so we can tell which ad led to a
+            visit to the App Store. You can block cookies and clear stored data in your browser settings.
+          </p>
+        </section>
+
+        <section>
+          <h2 style={h2}>6. Data Retention</h2>
           <p>We retain your personal information for as long as your account is active or as needed to provide you with the App. If you delete your account, we will delete your personal data within 30 days, except where retention is required by law.</p>
         </section>
 
         <section>
-          <h2 style={h2}>5. Your Rights</h2>
+          <h2 style={h2}>7. Your Rights</h2>
           <p style={{ marginBottom: 14 }}>Under the Australian Privacy Principles, you have the right to:</p>
           <ul style={ul}>
             <Item>Access the personal information we hold about you.</Item>
@@ -88,22 +124,22 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 style={h2}>6. Data Security</h2>
+          <h2 style={h2}>8. Data Security</h2>
           <p>We take reasonable steps to protect your information from unauthorised access, disclosure, or misuse. All data is transmitted over encrypted connections (HTTPS/TLS) and stored on Firebase&apos;s secured infrastructure.</p>
         </section>
 
         <section>
-          <h2 style={h2}>7. Children&apos;s Privacy</h2>
+          <h2 style={h2}>9. Children&apos;s Privacy</h2>
           <p>FinalRep is not directed at children under 13 years of age. We do not knowingly collect personal information from children under 13. If you believe we have inadvertently collected such information, please contact us and we will promptly delete it.</p>
         </section>
 
         <section>
-          <h2 style={h2}>8. Changes to This Policy</h2>
-          <p>We may update this Privacy Policy from time to time. We will notify you of significant changes by updating the “Last updated” date at the top of this page. Your continued use of the App after changes are posted constitutes acceptance of the updated policy.</p>
+          <h2 style={h2}>10. Changes to This Policy</h2>
+          <p>We may update this Privacy Policy from time to time. We will notify you of significant changes by updating the “Last updated” date at the top of this page. Your continued use of the App or Website after changes are posted constitutes acceptance of the updated policy.</p>
         </section>
 
         <section>
-          <h2 style={h2}>9. Contact Us</h2>
+          <h2 style={h2}>11. Contact Us</h2>
           <p style={{ marginBottom: 10 }}>If you have questions about this Privacy Policy or wish to make a privacy-related request, please contact:</p>
           <p>Paul Nasrallah — Email: <a href="mailto:finalrepfitness@icloud.com" className="fr-emaillink" style={link}>finalrepfitness@icloud.com</a></p>
           <p style={{ marginTop: 16 }}>If you are not satisfied with our response, you may lodge a complaint with the Office of the Australian Information Commissioner (OAIC) at <a href="https://www.oaic.gov.au" target="_blank" rel="noopener noreferrer" className="fr-emaillink" style={link}>www.oaic.gov.au</a>.</p>
