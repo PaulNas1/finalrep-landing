@@ -22,7 +22,7 @@ function Item({ children }: { children: React.ReactNode }) {
 
 export default function TermsPage() {
   return (
-    <LegalShell eyebrow="Legal" title="Terms of Use" meta="Last updated: February 2026">
+    <LegalShell eyebrow="Legal" title="Terms of Use" meta="Last updated: November 2026">
       <LegalProse>
         <p>
           These Terms of Use (“Terms”) govern your use of the FinalRep mobile application (“App”) developed and operated
@@ -43,17 +43,18 @@ export default function TermsPage() {
 
         <section>
           <h2 style={h2}>3. Subscription and Payments</h2>
-          <p style={{ marginBottom: 14 }}>FinalRep offers an auto-renewing subscription (“FinalRep Premium”) that unlocks additional features. By subscribing you agree to the following:</p>
+          <p style={{ marginBottom: 14 }}>FinalRep offers “FinalRep Premium”, which unlocks additional features, as an auto-renewing subscription or as a one-time Lifetime purchase. By purchasing you agree to the following:</p>
           <ul style={{ ...ul, marginBottom: 16 }}>
-            <Item>Payment is charged to your Apple ID account at confirmation of purchase.</Item>
+            <Item>Payment is charged to your Apple Account at confirmation of purchase.</Item>
             <Item>Your subscription automatically renews at the end of each billing period unless cancelled at least 24 hours before the renewal date.</Item>
             <Item>Renewal charges are made within 24 hours prior to the end of the current period at the same price.</Item>
             <Item>You can manage and cancel your subscription at any time in your iPhone&apos;s App Store settings under Subscriptions.</Item>
             <Item>A free trial, if offered, will convert to a paid subscription unless cancelled before the trial period ends. Any unused portion of a free trial is forfeited upon purchase of a subscription.</Item>
             <Item>No refunds are provided for partial subscription periods, except as required by applicable law.</Item>
+            <Item>Lifetime is a one-time purchase that unlocks FinalRep Premium for as long as the App is available, without a subscription. It does not renew, and you can restore it with Restore Purchases on devices signed in to the same Apple Account. Buying Lifetime does not cancel an existing subscription; cancel that separately in your App Store settings.</Item>
           </ul>
           <p style={{ marginBottom: 10 }}>To cancel: Go to <strong style={{ color: '#fff' }}>Settings → [Your Name] → Subscriptions → FinalRep</strong> on your iPhone and tap Cancel Subscription.</p>
-          <p>Prices are displayed in Australian Dollars (AUD) unless otherwise stated, and are inclusive of applicable taxes.</p>
+          <p>Prices are shown in the App before you buy, in your local App Store currency, and include applicable taxes.</p>
         </section>
 
         <section>
